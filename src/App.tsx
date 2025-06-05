@@ -1,15 +1,16 @@
-import React from "react";
-import { Calculator } from "./components/Calculator";
-import { Toaster } from "./components/ui/toaster";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Toaster } from "@/components/ui/toaster";
+import EventCardGenerator from "@/components/EventCardGenerator";
 
-function App() {
+export default function App() {
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">React Calculator</h1>
-      <Calculator />
+    <BrowserRouter>
+      <main className="min-h-screen bg-gray-50 p-4">
+        <Routes>
+          <Route path="/" element={<EventCardGenerator />} />
+        </Routes>
+      </main>
       <Toaster />
-    </div>
+    </BrowserRouter>
   );
 }
-
-export default App;
