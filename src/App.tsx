@@ -1,13 +1,14 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import CheckoutPage from './pages/Checkout';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Toaster } from "@/components/ui/toaster";
+import Login from "./pages/Login";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<div className="p-8 text-center"><h1 className="text-2xl font-bold mb-4">Home Page</h1><a href="/checkout" className="text-blue-600 underline">Go to Checkout</a></div>} />
-        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/" element={<Login />} />
       </Routes>
+      <Toaster />
     </BrowserRouter>
   );
 }
