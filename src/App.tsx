@@ -1,16 +1,15 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Toaster } from "@/components/ui/toaster";
-import EventCardGenerator from "@/components/EventCardGenerator";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import CheckoutPage from './pages/Checkout';
 
-export default function App() {
+function App() {
   return (
     <BrowserRouter>
-      <main className="min-h-screen bg-gray-50 p-4">
-        <Routes>
-          <Route path="/" element={<EventCardGenerator />} />
-        </Routes>
-      </main>
-      <Toaster />
+      <Routes>
+        <Route path="/" element={<div className="p-8 text-center"><h1 className="text-2xl font-bold mb-4">Home Page</h1><a href="/checkout" className="text-blue-600 underline">Go to Checkout</a></div>} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+      </Routes>
     </BrowserRouter>
   );
 }
+
+export default App;
